@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Apply theme on page load (only if not already set by inline script)
   const initialTheme = getPreferredTheme();
   const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-  
+
   // Only apply if the current theme doesn't match the preferred theme
   if (currentTheme !== initialTheme) {
     applyTheme(initialTheme);
