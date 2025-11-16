@@ -28,9 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
     return 'light';
   }
 
-  // Apply theme on page load
+  // Apply theme on page load (only if not already set by inline script)
   const initialTheme = getPreferredTheme();
-  applyTheme(initialTheme);
+  const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  
+  // Only apply if the current theme doesn't match the preferred theme
+  if (currentTheme !== initialTheme) {
+    applyTheme(initialTheme);
+  }
 
   // Theme toggle click handler
   if (themeToggle) {
